@@ -24,9 +24,9 @@ body{
     border-radius: 16px;
     padding: 30px;
     position: sticky;
+    top: 40px;
 }
 .main-content{
-    height: 100%;
     background-color: #2a2a2a;
     border: 1px solid #3a3a3a;
     border-radius: 16px;
@@ -116,9 +116,14 @@ nav a{
     font-weight: 550;
     transition: all 0.3s ease;
 }
+
 .ab{
     color: #FFBF00;
 }
+nav a.active {
+    color: #FFBF00;
+}
+
 nav a:hover{
     color: #FFBF00;
 }
@@ -138,4 +143,207 @@ nav a:hover{
 }
 .about-content{
     text-align: justify;
+}
+
+/* skills  */
+
+.skill{
+    color: #e0e0e0;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    margin-top: 25px;
+}
+.grid-img{
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 40px;
+}
+.item{
+    border: 2px solid #3a3a3a;
+    transition: all 0.3s ease;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #1e1e1e;
+    text-align: center;
+}
+.item img{
+    height: 48px;
+    width: 48px;
+    filter: invert(76%) sepia(94%) saturate(2000%) hue-rotate(1deg) brightness(105%) contrast(105%);
+}
+.item h3{
+    margin-top: 10px;
+    font-size: 1rem;
+}
+.item:hover{
+    transform: scale(1.05);
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* education  */
+#education{
+    margin-top: 30px;
+}
+.edtech{
+    position: relative;
+    margin-top: 20px;
+}
+.year{
+    font-size: 0.9rem;
+    color: #a0a0a0;
+    margin-bottom: 5px;
+}
+.degree{
+    color: #e0e0e0;
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+.college{
+    font-style: italic;
+    color: #a0a0a0;
+    margin-bottom: 10px;
+}
+.work{
+    color: #a0a0a0;
+}
+.edu1, .edu2{
+    margin-bottom: 30px;
+    position: relative;
+    padding-left: 25px;
+}
+.goal{
+    height: 15px;
+    width: 15px;
+    border: 3px solid #FFBF00;
+    color: #FFBF00;
+    border-radius: 50%;
+    position: absolute;
+    top: 4px;
+    left: 0px;
+    z-index: 1;
+}
+.liner{
+    width: 2px;
+    border: 2px solid #3a3a3a;
+    border-radius: 20px;
+    position: absolute;
+    top: 5px;
+    bottom: 0px;
+    left: 5px;
+}
+
+/* portfolio */
+
+.project-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 30px;
+}
+.project img{
+    width: 100%;
+    object-fit: cover;
+    height: 180px;
+}
+
+.project{
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    margin-top: 10px;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    border: 1px solid #3a3a3a;
+}
+.project:hover{
+    transform:translateY(-10px);
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.3);
+}
+.card{
+    padding: 20px;
+}
+.card h3{
+    color: #e0e0e0;
+    margin-bottom: 10px;
+}
+.card p{
+    color: #a0a0a0;
+    line-height: 1.6;
+    /* text-align: start; */
+    margin-bottom: 15px;
+}
+.card span{
+    font-size: 0.75rem;
+    font-weight: 550;
+    margin-right: 5px;
+    background-color: rgba(255, 191, 0, 0.1);
+    color: #FFBF00;
+    border-radius: 5px;
+    padding: 4px 8px;
+}
+
+
+/* at the end */
+
+/* Hamburger Button */
+.menu-btn {
+    display: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #FFBF00;
+}
+
+/* Nav links container */
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+/* Mobile Menu */
+@media (max-width: 768px) {
+    .menu-btn {
+        display: block;
+    }
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #2a2a2a;
+        padding: 15px;
+        border-radius: 8px;
+        margin-top: 10px;
+        width: 100%;
+    }
+    .nav-links.show {
+        display: flex;
+    }
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* 📱 Responsive Media Queries */
+@media (max-width: 992px) {
+    .main-container {
+        grid-template-columns: 280px 1fr;
+        gap: 20px;
+        padding: 20px;
+    }
+}
+@media (max-width: 768px) {
+    .main-container {
+        grid-template-columns: 1fr;
+    }
+    .sidebar {
+        position: static;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    nav { justify-content: center; }
+}
+@media (max-width: 480px) {
+    body { font-size: 14px; }
+    .main-content, .sidebar { padding: 20px; }
+    .project img { height: 150px; }
 }
